@@ -1,0 +1,119 @@
+/* layout.css */
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: var(--space-md);
+}
+
+section {
+    margin-bottom: var(--space-xl);
+}
+
+#lancamentos ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#lancamentos li {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.form-acessivel {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: var(--space-sm) var(--space-lg);
+        gap: var(--space-lg);
+    }
+
+    .logo-container {
+        flex-shrink: 0;
+    }
+
+    header h1 {
+        white-space: nowrap;
+    }
+
+    nav {
+        min-width: 0;
+        overflow-x: auto;
+        flex-shrink: 1;
+    }
+
+    nav ul {
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+    main {
+        grid-template-columns: 1fr 240px;
+        grid-template-areas:
+            "noticias sidebar"
+            "trailers sidebar"
+            "lancamentos sidebar";
+    }
+
+    #noticias-games { grid-area: noticias; }
+    #newsletter { grid-area: sidebar; align-self: start; }
+    #trailers { grid-area: trailers; }
+    #lancamentos { grid-area: lancamentos; }
+
+    .noticia-card {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .noticia-card img {
+        width: 200px;
+        height: 150px;
+        flex-shrink: 0;
+    }
+
+    .noticia-card .conteudo {
+        min-width: 0;
+    }
+
+    .rodape-noticia {
+        flex-direction: column;
+        gap: 4px;
+    }
+}
+
+@media (min-width: 1024px) {
+    nav ul {
+        justify-content: flex-end;
+        padding: 0;
+    }
+
+    main {
+        grid-template-columns: 1fr 300px;
+        gap: var(--space-xl);
+    }
+
+    .noticia-card img {
+        width: 350px;
+        height: 200px;
+    }
+}
+
