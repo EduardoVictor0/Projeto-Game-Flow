@@ -1,0 +1,29 @@
+/* reset.css */
+:where(*) {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+html {
+    scroll-behavior: smooth;
+}
+body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol {
+    margin: 0;
+}
+ul, ol {
+    padding: 0;
+    list-style: none;
+}
+img, video, iframe, picture {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+button, input, select, textarea {
+    font: inherit;
+}
+button {
+    background: none;
+    border: none;
+}
